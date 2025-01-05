@@ -1,17 +1,13 @@
-// your code here
-const heading=document.getElementById("id");
-const name=document.getElementById("name");
-const year=document.getElementById("year");
-const submit=document.getElementById("button");
-
-submit.addEventListenner('click',()=>{
-	const Name=document.getElementById("name").value;
-	const Year=document.getElementById("year").value;
-	  if(Name!=="" &Year!==""){
-		  heading.innerHTML=`https://localhost:8080/?name=${Name}&year=${Year}`;
-	  }elseif(name===""){
-		   heading.innerHTML=`https://localhost:8080/?year=${Year}`
-	  }else{
-		   heading.innerHTML=`https://localhost:8080/?name=${Name}`
-	  }
-})
+document.getElementById("button").onclick=function(){
+	const heading = document.getElementById("url");
+      const name = document.getElementById("name").value;
+      const year = document.getElementById("year").value
+	
+      if (name !== "" && year !== "") {
+        heading.innerHTML = `https://localhost:8080/?name=${name}&year=${year}`;
+      } else if (name === "") {
+        heading.innerHTML = `https://localhost:8080/?year=${year}`;
+      } else {
+        heading.innerHTML = `https://localhost:8080/?name=${name}`;
+      }
+}
